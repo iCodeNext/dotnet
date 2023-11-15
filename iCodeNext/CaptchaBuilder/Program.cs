@@ -1,5 +1,4 @@
-﻿
-using CaptchaBuilder.WithOut;
+﻿using CaptchaBuilder.WithOut;
 
 var type = Console.ReadLine();
 

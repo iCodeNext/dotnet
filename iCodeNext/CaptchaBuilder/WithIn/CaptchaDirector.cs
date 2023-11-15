@@ -5,9 +5,7 @@ public class CaptchaDirector
     private ICaptchaBuilder _captchaBuilder;
 
     public void SetCaptchaBuilder(ICaptchaBuilder captchaBuilder)
-    {
-        _captchaBuilder = captchaBuilder;
-    }
+        => _captchaBuilder = captchaBuilder;
 
     public Captcha GenerateCaptcha()
     {
