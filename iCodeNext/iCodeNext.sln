@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34309.116
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EFCore", "EFCore", "{C23BD19E-C05D-4AB5-9AA3-23D716D39A56}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ChangingConnectionString", "ChangingConnectionString", "{B17D1DC3-143D-41B2-8FCD-09DE110B133C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChangingConnectionString", "ChangingConnectionString\ChangingConnectionString.csproj", "{323AE541-F815-43C2-A251-08552CA735F0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{323AE541-F815-43C2-A251-08552CA735F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{323AE541-F815-43C2-A251-08552CA735F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{323AE541-F815-43C2-A251-08552CA735F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{323AE541-F815-43C2-A251-08552CA735F0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B17D1DC3-143D-41B2-8FCD-09DE110B133C} = {C23BD19E-C05D-4AB5-9AA3-23D716D39A56}
+		{323AE541-F815-43C2-A251-08552CA735F0} = {B17D1DC3-143D-41B2-8FCD-09DE110B133C}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2612291B-6B99-482B-9E5C-F43B9A4AAB95}
+	EndGlobalSection
+EndGlobal
