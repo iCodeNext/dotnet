@@ -2665,11 +2665,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\iCodeNext\\GithubRepo\\iCodeNext\\ChangingConnectionString\\ChangingConnectionString.csproj",
+      "projectUniqueName": "D:\\iCodeNext\\GithubRepo\\dotnet\\iCodeNext\\ChangingConnectionString\\ChangingConnectionString.csproj",
       "projectName": "ChangingConnectionString",
-      "projectPath": "D:\\iCodeNext\\GithubRepo\\iCodeNext\\ChangingConnectionString\\ChangingConnectionString.csproj",
+      "projectPath": "D:\\iCodeNext\\GithubRepo\\dotnet\\iCodeNext\\ChangingConnectionString\\ChangingConnectionString.csproj",
       "packagesPath": "C:\\Users\\Mohammad\\.nuget\\packages\\",
-      "outputPath": "D:\\iCodeNext\\GithubRepo\\iCodeNext\\ChangingConnectionString\\obj\\",
+      "outputPath": "D:\\iCodeNext\\GithubRepo\\dotnet\\iCodeNext\\ChangingConnectionString\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Mohammad\\AppData\\Roaming\\NuGet\\NuGet.Config",

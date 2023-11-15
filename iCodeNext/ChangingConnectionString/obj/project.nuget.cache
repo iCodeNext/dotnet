@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "7oIDvd/88yG1ru7T0efuLVOH0PxnSmg8y2elqC3tkMZ114RPf6l/tK2xt54ELKRNm9f+Tr7aaaqZHUU2CdBZiA==",
+  "dgSpecHash": "yfS/1ue9g8HU44zYgJ/0/rDEoZkfaA7HyVNqFTYbj2xpAGNW8psKCg/declZHBBBOg0Kvpg5/ILwdMgGn4ZYQw==",
   "success": true,
-  "projectFilePath": "D:\\iCodeNext\\GithubRepo\\iCodeNext\\ChangingConnectionString\\ChangingConnectionString.csproj",
+  "projectFilePath": "D:\\iCodeNext\\GithubRepo\\dotnet\\iCodeNext\\ChangingConnectionString\\ChangingConnectionString.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Mohammad\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\Mohammad\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
