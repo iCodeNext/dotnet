@@ -2,9 +2,9 @@
 
 namespace ChangingConnectionString.Context;
 
-public class MyContext : DbContext
+public class ApplicationDbContext : DbContext
 {
-    public MyContext(DbContextOptions<MyContext> options,
+    public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options,
         IGetConnection getConnection) : base(options)
              => Database.SetConnectionString(getConnection?.CurrentConnection());
 }
