@@ -41,14 +41,9 @@ public class Order(int id) : Entity(id)
         => id.ToString();
 }
 
-
-
-
-//public class UserService(IServiceProvider serviceProvider)
-//{
-//}
-
-
+public class UserService(IServiceProvider serviceProvider)
+{
+}
 
 //public class Order(int id, int code)
 //{
