@@ -1,7 +1,5 @@
 ﻿namespace CSharp12Features.PrimaryConstructor;
 
-
-
 //public class Order_Compiled
 //{
 //    private int _sadlfkjlw453l45jl345_id;
@@ -53,16 +51,16 @@ public class UserService(IServiceProvider serviceProvider)
 //    }
 //}
 
-//public class Order_Compiled
-//{
-//    private int _sadlfkjlw453l45jl345_id;
-//    public Order_Compiled(int id, int code)
-//    {
-//        _sadlfkjlw453l45jl345_id = id;
-//    }
+public class Order_Compiled
+{
+    private int _sadlfkjlw453l45jl345_id;
+    public Order_Compiled(int id, int code)
+    {
+        _sadlfkjlw453l45jl345_id = id;
+    }
 
-//    public string ToString()
-//    {
-//        return _sadlfkjlw453l45jl345_id.ToString();
-//    }
-//}
+    public string ToString()
+    {
+        return _sadlfkjlw453l45jl345_id.ToString();
+    }
+}
