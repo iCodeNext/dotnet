@@ -6,17 +6,21 @@ public class CollectionExpressionExamples
 {
     public void Test()
     {
-        int[] ints = { 1, 2, 3 };
-        int[] ints2 = new int[] { 1, 2, 3 };
-        int[] ints3 = new[] { 1, 2, 3 };
 
-        Span<int> span = new Span<int>(new[] { 1, 2, 3 });
-        Span<int> span2 = stackalloc[] { 1, 2, 3 };
-        ReadOnlySpan<int> span3 = stackalloc[] { 1, 2, 3 };
 
-        List<int> list = new() { 1, 2, 3 };
+        int[] ints = [1, 2, 3];
+        int[] ints2 = [1, 2, 3];
+        int[] ints3 = [.. ints, .. ints2, 4, 6];
 
-        ImmutableArray<int> immutableArray = ImmutableArray.Create(new[] { 1, 2, 3 });
+        Span<int> span = [1, 2, 3];
+        Span<int> span2 = [1, 2, 3];
+        ReadOnlySpan<int> span3 = [1, 2, 3];
+
+        List<int> list = [1, 2, 3];
+
+        ImmutableArray<int> immutableArray =
+            [1, 2, 3];
+
 
         int[] days = new int[] { 1, 2, 3 };
         foreach (var day in days)
@@ -35,7 +39,7 @@ public class CollectionExpressionExamples
 
         string[] vowels = new string[] { "a", "e", "i", "o", "u" };
         string[] consonants = { "b", "c", "d", "z" };
-       // string[] alphabet = new string[] { vowels, consonants };
+        // string[] alphabet = new string[] { vowels, consonants };
 
         //int x = 2;
         //int y = 5;
@@ -51,7 +55,9 @@ public class CollectionExpressionExamples
         //var slice3 = array[2..];
         //var slice4 = array[..];
 
-        // MyCollection strings = ["asdf", "sdf"];
+
+        string[] names = ["james", "jack"];
+        MyCollection namesCollection = ["name_3", .. names, "name_4"];
 
     }
 }
@@ -64,10 +70,10 @@ public class Calculator
     public int Sum(IEnumerable<int> nums)
      => nums.Sum();
 
-    //public List<string> GetAll()
-    //{
-    //    IReadOnlyList<string> lst = ["", ""];
+    public List<string> GetAll()
+    {
+        IReadOnlyList<string> lst = ["", ""];
 
-    //    return ["asdfasddf", "asdfds", "sdfdf"];
-    //}
+        return ["asdfasddf", "asdfds", "sdfdf"];
+    }
 }
