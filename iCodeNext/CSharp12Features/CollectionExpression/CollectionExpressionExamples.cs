@@ -35,7 +35,7 @@ public class CollectionExpressionExamples
 
         string[] vowels = new string[] { "a", "e", "i", "o", "u" };
         string[] consonants = { "b", "c", "d", "z" };
-        //string[] alphabet = ;
+       // string[] alphabet = new string[] { vowels, consonants };
 
         //int x = 2;
         //int y = 5;
@@ -51,7 +51,7 @@ public class CollectionExpressionExamples
         //var slice3 = array[2..];
         //var slice4 = array[..];
 
-        MyCollection strings = ["asdf", "sdf"];
+        // MyCollection strings = ["asdf", "sdf"];
 
     }
 }
