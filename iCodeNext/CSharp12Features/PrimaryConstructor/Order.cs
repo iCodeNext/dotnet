@@ -14,17 +14,16 @@
 //    }
 //}
 
-//public class Order(int id)
-//{
-//    public Order() : this(15)
-//    {
-//    }
+public class Order(int id)
+{
+    private readonly int _id = id;
 
-//    public string ToString()
-//    {
-//        return id.ToString();
-//    }
-//}
+    public string ToString()
+    {
+        id = 45;
+        return _id.ToString();
+    }
+}
 
 
 //public class Entity(int id)
