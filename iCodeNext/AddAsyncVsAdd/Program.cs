@@ -5,7 +5,7 @@ using Microsoft.Extensions.Logging;
 
 var dbContextOptions = new DbContextOptionsBuilder<ApplicationDbContext>()
     .UseSqlServer("Server=DESKTOP-TVCSFN3\\MHA;Database=iCodeNext;Trusted_Connection=True;Encrypt=false")
-    .LogTo(Console.WriteLine, LogLevel.Information)
+    .LogTo(Console.WriteLine,LogLevel.Information)
     .EnableSensitiveDataLogging()
     .Options;
 
@@ -26,3 +26,4 @@ await dbContext.Customers.AddAsync(new Customer
 });
 
 await dbContext.SaveChangesAsync();
+
