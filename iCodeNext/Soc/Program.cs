@@ -1,9 +1,29 @@
-﻿
-using Soc.WithIn;
+﻿using Soc.WithIn;
 using Soc.WithOut;
 
 Soc.WithOut.OrderProcessor orderProcessor = new();
-orderProcessor.ProcessOrder("Widget", 2, "user@example.com", "1234567890");
+orderProcessor.ProcessOrder("Widget", 2, "user@example.com", "0912....");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // With SOC

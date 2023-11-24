@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Soc.WithIn;
+﻿namespace Soc.WithIn;
 
 using System;
 
@@ -56,4 +50,3 @@ public class OrderProcessor
     }
 }
 
- 
