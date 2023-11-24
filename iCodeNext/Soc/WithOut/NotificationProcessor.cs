@@ -2,9 +2,14 @@
 
 namespace Soc.WithOut;
 
-public class NotificationService
+public interface INotification
 {
-    public void SendEmailNotification(string message, string emailAddress)
+    void Send(string message, string receiver);
+}
+
+public class EmailService : INotification
+{
+    public void Send(string message, string emailAddress)
     {
         SmtpClient smtpClient = new()
         {
@@ -12,8 +17,11 @@ public class NotificationService
         };
         smtpClient.Send(new MailMessage(message, emailAddress));
     }
+}
 
-    public void SendSMSNotification(string message, string phoneNumber)
+public class SmsService : INotification
+{
+    public void Send(string message, string phoneNumber)
     {
         HttpClient httpClient = new();
         httpClient.Send(new HttpRequestMessage { });
@@ -22,19 +30,23 @@ public class NotificationService
 
 public class OrderProcessor
 {
-    private readonly NotificationService _notificationService;
+    private readonly INotification _smsService;
+    private readonly INotification _emailService;
 
     public OrderProcessor()
-        => _notificationService = new NotificationService();
+    {
+        _smsService = new SmsService();
+        _emailService = new EmailService();
+    }
 
     public void ProcessOrder(string itemName, int quantity, string emailAddress, string phoneNumber)
     {
         // Business logic for processing the order
 
         // Notify the user via email
-        _notificationService.SendEmailNotification($"Your order for {quantity} {itemName} has been processed.", emailAddress);
+        _emailService.Send($"Your order for {quantity} {itemName} has been processed.", emailAddress);
 
         // Notify the user via SMS
-        _notificationService.SendSMSNotification($"Your order for {quantity} {itemName} has been processed.", phoneNumber);
+        _smsService.Send($"Your order for {quantity} {itemName} has been processed.", phoneNumber);
     }
 }
