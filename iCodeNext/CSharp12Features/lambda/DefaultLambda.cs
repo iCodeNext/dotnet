@@ -1,36 +1,19 @@
-﻿using System.Reflection.Metadata;
-using System.Runtime.CompilerServices;
-using System.Security.Cryptography.X509Certificates;
-
-namespace CSharp12Features.lambda;
-
-public class DefaultLambda
-{
-
-}
+﻿namespace CSharp12Features.lambda;
 
 public class Program
 {
     public void Main(string[] args)
     {
-        Action<string[]> a3 = (params string[] s) => { };
+        var action = (int x = 75) => {  };
 
-        var IncrementBy = (int source, int increment = 1) => source + increment;
-        IncrementBy(5);
+        var action1 = (params string[] names) =>
+        {
 
-         
-        var Log = (string message, string path = "...")
-            => File.WriteAllText(path, message);
+        };
 
-        Log("Message");
-        Log("Message", "Destination Path");
-
-
-        var Sum = (params int[] scores)
-            => {/* TODO */};
-
-        Sum([15, 2, 15, 32, 88]);
-
-
+        var action2 = (int number) => {   };
+ 
     }
+
+    public delegate int ProcessMethod(int number);
 }
