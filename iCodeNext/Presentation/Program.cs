@@ -1,13 +1,12 @@
-using Application.Interfaces;
-using Infrastructure.Context;
-using Microsoft.EntityFrameworkCore;
+using Application;
+using Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 {
     builder.Services.AddControllers();
     builder.Services.AddEndpointsApiExplorer();
-    builder.Services.AddScoped<IApplicationDbContext, ApplicationDbContext>();
-  
+    builder.Services.RegisterApplicationServices()
+           .RegisterPersistenceServices(builder.Configuration);
 }
 var app = builder.Build();
 {

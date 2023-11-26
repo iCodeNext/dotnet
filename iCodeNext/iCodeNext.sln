@@ -31,7 +31,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Soc", "Soc\Soc.csproj", "{E
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KeyServices", "KeyServices\KeyServices.csproj", "{BB613F79-7695-4388-BAF9-C78E292C0B50}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitOfWorkAndRepository", "UnitOfWorkAndRepository", "{93F97916-8CC8-470A-A36C-74992EA4C1DF}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WithOut_Uow", "WithOut_Uow", "{93F97916-8CC8-470A-A36C-74992EA4C1DF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{17F37256-B87D-44DA-826E-04E2D9180215}"
 EndProject
