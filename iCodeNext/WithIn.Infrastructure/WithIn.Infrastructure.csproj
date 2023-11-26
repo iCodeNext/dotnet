@@ -7,15 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\WithIn.Domain\WithIn.Domain.csproj" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Common\Interfaces\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="MediatR" Version="12.2.0" />
+    <ProjectReference Include="..\WithIn.Application\WithIn.Application.csproj" />
   </ItemGroup>
 
 </Project>
