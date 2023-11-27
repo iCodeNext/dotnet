@@ -1,6 +1,8 @@
-﻿namespace WithIn.Application.Common.Interfaces;
+﻿using WithIn.Domain.Entities;
 
-public interface IGenericRepository<T>
+namespace WithIn.Application.Common.Interfaces;
+
+public interface IGenericRepository<T> where T : Entity
 {
     IQueryable<T> GetQueryable();
     void Add(T entity);
