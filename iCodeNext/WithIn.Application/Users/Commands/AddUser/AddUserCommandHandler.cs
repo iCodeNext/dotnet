@@ -6,7 +6,6 @@ public class AddUserCommandHandler : IRequestHandler<AddUserCommand, int>
 {
     public async Task<int> Handle(AddUserCommand request, CancellationToken cancellationToken)
     {
-        await Task.CompletedTask;
-        return 0;
+        
     }
 }
