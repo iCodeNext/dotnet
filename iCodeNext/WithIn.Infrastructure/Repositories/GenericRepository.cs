@@ -21,4 +21,9 @@ public class GenericRepository<T>(ApplicationDbContext dbContext) : IGenericRepo
     {
         return await dbContext.Set<T>().ToListAsync();
     }
+
+    public IQueryable<T> GetQueryable()
+    {
+        return dbContext.Set<T>().AsQueryable();
+    }
 }
