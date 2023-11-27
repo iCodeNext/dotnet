@@ -3,6 +3,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using WithIn.Domain.Repository;
+using WithIn.Infrastructure.Repositories;
 
 namespace WithIn.Infrastructure;
 
@@ -15,6 +17,8 @@ public static class ServiceConfig
             options.UseSqlServer(configuration.GetConnectionString("ApplicationDbContext"))
                    .LogTo(Console.WriteLine, LogLevel.Information);
         });
+
+        services.AddScoped<IUserRepository, UserRepository>();
 
         return services;
     }
