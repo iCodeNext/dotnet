@@ -1,5 +1,4 @@
-﻿using Application.Common.Interfaces;
-using Domain.Entities;
+﻿using Domain.Entities;
 using MediatR;
 
 namespace Application.Users.Commands.AddUser;
