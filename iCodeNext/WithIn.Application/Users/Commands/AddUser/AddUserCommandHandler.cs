@@ -1,6 +1,6 @@
 ﻿using MediatR;
 using WithIn.Domain.Entities;
-using WithIn.Domain.Repository;
+using WithIn.Domain.Repositories;
 
 namespace WithIn.Application.Users.Commands.AddUser;
 

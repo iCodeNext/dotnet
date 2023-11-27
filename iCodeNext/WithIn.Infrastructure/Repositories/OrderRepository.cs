@@ -4,13 +4,19 @@ using WithIn.Infrastructure.Context;
 
 namespace WithIn.Infrastructure.Repositories;
 
-public class UserRepository(ApplicationDbContext dbContext) : IUserRepository
+public class OrderRepository(ApplicationDbContext dbContext) : IOrderRepository
 {
-    public void Add(User user)
+     
+    public void Add(Order order)
     {
-        dbContext.User.Add(user);
+        dbContext.Order.Add(order);
     }
-    
+
+    public async Task<Order> FindAsync(int id)
+    {
+       return await dbContext.Order.FindAsync(id);
+    }
+
     public async Task<int> SaveAsync()
     {
         return await dbContext.SaveChangesAsync();

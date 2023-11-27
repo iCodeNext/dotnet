@@ -9,6 +9,7 @@ public class AddUserCommandHandler(IApplicationDbContext dbContext) : IRequestHa
     public async Task<int> Handle(AddUserCommand request, CancellationToken cancellationToken)
     {
         dbContext.User.Add(new User { });
+        
 
         return await dbContext.SaveChangesAsync();
     }

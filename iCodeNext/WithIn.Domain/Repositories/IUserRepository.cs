@@ -1,6 +1,6 @@
 ﻿using WithIn.Domain.Entities;
 
-namespace WithIn.Domain.Repository;
+namespace WithIn.Domain.Repositories;
 
 public interface IUserRepository
 {
