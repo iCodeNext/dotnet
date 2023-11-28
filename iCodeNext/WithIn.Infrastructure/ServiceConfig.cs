@@ -5,7 +5,6 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using WithIn.Domain.Repositories;
 using WithIn.Infrastructure.Repositories;
-using WithIn.Application.Common.Interfaces;
 
 namespace WithIn.Infrastructure;
 
@@ -21,8 +20,6 @@ public static class ServiceConfig
 
         services.AddScoped<IUserRepository, UserRepository>();
         services.AddScoped<IOrderRepository, OrderRepository>();
-        services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
-        services.AddScoped<IUnitOfWork, UnitOfWork>();
 
         return services;
     }

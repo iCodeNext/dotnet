@@ -6,7 +6,6 @@ namespace WithIn.Infrastructure.Repositories;
 
 public class OrderRepository(ApplicationDbContext dbContext) : IOrderRepository
 {
-     
     public void Add(Order order)
     {
         dbContext.Order.Add(order);
