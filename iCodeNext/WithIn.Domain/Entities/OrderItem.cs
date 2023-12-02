@@ -1,6 +1,6 @@
 ﻿namespace WithIn.Domain.Entities;
 
-public class OrderItem
+public class OrderItem : IEntity
 {
     public int Id { get; set; }
 
