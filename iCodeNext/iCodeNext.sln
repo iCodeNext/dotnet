@@ -33,25 +33,27 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KeyServices", "KeyServices\
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Uow_Repository", "Uow_Repository", "{93F97916-8CC8-470A-A36C-74992EA4C1DF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{17F37256-B87D-44DA-826E-04E2D9180215}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Domain\Domain.csproj", "{17F37256-B87D-44DA-826E-04E2D9180215}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "Application\Application.csproj", "{FCC04CA6-EE9D-4594-B97E-E3F3D64C9DA5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application", "Application\Application.csproj", "{FCC04CA6-EE9D-4594-B97E-E3F3D64C9DA5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{05125064-B71B-40FA-90C8-2EF71A3544B1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{05125064-B71B-40FA-90C8-2EF71A3544B1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Presentation", "Presentation\Presentation.csproj", "{CDACEAD4-C9C0-4730-966C-09425D33FC54}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Presentation", "Presentation\Presentation.csproj", "{CDACEAD4-C9C0-4730-966C-09425D33FC54}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WithOut", "WithOut", "{DCC6A38E-CF54-4BEA-8C6D-0985A7534A9F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WithIn", "WithIn", "{9BCFDD60-1EAF-43B8-89EC-C9B07CAE8774}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WithIn.Domain", "WithIn.Domain\WithIn.Domain.csproj", "{C1CA039E-4A94-46FE-AD61-0B0357C3FCA6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WithIn.Domain", "WithIn.Domain\WithIn.Domain.csproj", "{C1CA039E-4A94-46FE-AD61-0B0357C3FCA6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WithIn.Application", "WithIn.Application\WithIn.Application.csproj", "{598E86F5-740C-44B2-9211-6010A3347D3C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WithIn.Application", "WithIn.Application\WithIn.Application.csproj", "{598E86F5-740C-44B2-9211-6010A3347D3C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WithIn.Infrastructure", "WithIn.Infrastructure\WithIn.Infrastructure.csproj", "{1CBE7706-A6DE-432B-A5A4-5BC81B4792DA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WithIn.Infrastructure", "WithIn.Infrastructure\WithIn.Infrastructure.csproj", "{1CBE7706-A6DE-432B-A5A4-5BC81B4792DA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WithIn.Presentation", "WithIn.Presentation\WithIn.Presentation.csproj", "{B7790F2E-E333-45BD-AE03-EF383648DBF0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WithIn.Presentation", "WithIn.Presentation\WithIn.Presentation.csproj", "{B7790F2E-E333-45BD-AE03-EF383648DBF0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ObjPooling", "ObjPooling\ObjPooling.csproj", "{0AC066AF-188D-4858-BF66-5BE97CD5FA51}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -119,6 +121,10 @@ Global
 		{B7790F2E-E333-45BD-AE03-EF383648DBF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B7790F2E-E333-45BD-AE03-EF383648DBF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B7790F2E-E333-45BD-AE03-EF383648DBF0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0AC066AF-188D-4858-BF66-5BE97CD5FA51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0AC066AF-188D-4858-BF66-5BE97CD5FA51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0AC066AF-188D-4858-BF66-5BE97CD5FA51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0AC066AF-188D-4858-BF66-5BE97CD5FA51}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -145,6 +151,7 @@ Global
 		{598E86F5-740C-44B2-9211-6010A3347D3C} = {9BCFDD60-1EAF-43B8-89EC-C9B07CAE8774}
 		{1CBE7706-A6DE-432B-A5A4-5BC81B4792DA} = {9BCFDD60-1EAF-43B8-89EC-C9B07CAE8774}
 		{B7790F2E-E333-45BD-AE03-EF383648DBF0} = {9BCFDD60-1EAF-43B8-89EC-C9B07CAE8774}
+		{0AC066AF-188D-4858-BF66-5BE97CD5FA51} = {4BE4B82D-420B-4E18-8803-B49CB969D875}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2612291B-6B99-482B-9E5C-F43B9A4AAB95}
