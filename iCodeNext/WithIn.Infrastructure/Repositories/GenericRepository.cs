@@ -4,10 +4,10 @@ using WithIn.Domain.Entities;
 using WithIn.Infrastructure.Context;
 
 namespace WithIn.Infrastructure.Repositories;
-public class GenericRepository<TEntity>(ApplicationDbContext dbContext) 
-    : IGenericRepository<TEntity> where TEntity : class
+
+public class GenericRepository<TEntity>(ApplicationDbContext dbContext) where TEntity : class, IEntity
 {
-    private readonly ApplicationDbContext _dbContext = dbContext;
+    protected readonly ApplicationDbContext _dbContext = dbContext;
 
     public void Add(TEntity entity)
     {

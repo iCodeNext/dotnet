@@ -4,20 +4,11 @@ using WithIn.Infrastructure.Context;
 
 namespace WithIn.Infrastructure.Repositories;
 
-public class OrderRepository(ApplicationDbContext dbContext) : IOrderRepository
+public class OrderRepository(ApplicationDbContext dbContext) 
+    : GenericRepository<Order>(dbContext), IOrderRepository
 {
-    public void Add(Order order)
-    {
-        dbContext.Order.Add(order);
-    }
-
     public async Task<Order> FindAsync(int id)
     {
-       return await dbContext.Order.FindAsync(id);
-    }
-
-    public async Task<int> SaveAsync()
-    {
-        return await dbContext.SaveChangesAsync();
+       return await _dbContext.Order.FindAsync(id);
     }
 }
