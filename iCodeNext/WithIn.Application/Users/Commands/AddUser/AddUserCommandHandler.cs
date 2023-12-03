@@ -19,7 +19,7 @@ public class AddUserCommandHandler : IRequestHandler<AddUserCommand, int>
         _uow.User.Add(new User { });
         _uow.User.Add(new User { });
         _uow.User.Add(new User { });
-        
+
         return await _uow.SaveAsync();
     }
 }

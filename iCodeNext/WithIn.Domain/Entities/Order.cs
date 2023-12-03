@@ -1,6 +1,6 @@
 ﻿namespace WithIn.Domain.Entities;
 
-public class Order  : IEntity
+public class Order 
 {
     public int Id { get; set; }
     public string Code { get; set; }

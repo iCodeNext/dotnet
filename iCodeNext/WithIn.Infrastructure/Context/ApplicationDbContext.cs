@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 namespace WithIn.Infrastructure.Context;
 
 public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
-    : DbContext(options)
+    : DbContext 
 {
     public DbSet<User> User { get; set; }
     public DbSet<Order> Order { get; set; }
