@@ -1,36 +1,30 @@
+using KeyServices.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace KeyServices.Controllers;
 
 [ApiController]
 [Route("[controller]/[action]")]
-public class HomeController([FromKeyedServices(nameof(SmsService))] IEventService eventService) : ControllerBase
+public class HomeController : ControllerBase
 {
+    private readonly IEventService _eventService;
+
+    public HomeController([FromKeyedServices(nameof(SmsService))] IEventService eventService)
+    {
+        _eventService = eventService;
+    }
+
     [HttpGet]
     public ActionResult Index()
     {
-        eventService.Send("new message");
+        //foreach (var item in _eventService)
+        //{
+        //    if (item is SmsService)
+        //    {
+        _eventService.Push("message");
+        //}
+        //}
+
         return Ok("OK From Index!");
-    }
-}
-
-public interface IEventService
-{
-    void Send(string message);
-}
-
-public class SmsService : IEventService
-{
-    public void Send(string message)
-    {
-        Console.WriteLine(message);
-    }
-}
-
-public class EmailService : IEventService
-{
-    public void Send(string message)
-    {
-        Console.WriteLine(message);
     }
 }
