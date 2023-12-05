@@ -8,3 +8,4 @@ public sealed class ApplicationDbContext(DbContextOptions<ApplicationDbContext> 
 {
     public DbSet<Customer> Customers { get; set; }
 }
+

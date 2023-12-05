@@ -26,4 +26,3 @@ Expression<Func<int, bool>> Compare_Expression = (int num) => num > 15;
 var Compare_Method = Compare_Expression.Compile();
 
 
- 
