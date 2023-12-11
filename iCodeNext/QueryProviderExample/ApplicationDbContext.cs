@@ -2,7 +2,8 @@
 
 namespace QueryProviderExample;
 
-public class ApplicationDbContext : DbContext
+public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
+    : DbContext(options)
 {
     public DbSet<User> Users { get; set; }
 }
