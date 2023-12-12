@@ -40,3 +40,12 @@ public class MyQueryable : IQueryable
         return null;
     }
 }
+
+
+/*
+ Roslyn - High level source generator
+ T4 - Generate code as a template
+ Expression Tree - Repsentation of Code
+ Reflection.Emit - IL
+ 
+ */
