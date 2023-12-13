@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.002.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UAP", "UAP.csproj", "{CC4A0F09-54EF-490C-9E45-D7F377E976DA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CC4A0F09-54EF-490C-9E45-D7F377E976DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC4A0F09-54EF-490C-9E45-D7F377E976DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC4A0F09-54EF-490C-9E45-D7F377E976DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC4A0F09-54EF-490C-9E45-D7F377E976DA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {175E82E5-D4CB-4A28-B02B-E9F7272FC827}
+	EndGlobalSection
+EndGlobal
