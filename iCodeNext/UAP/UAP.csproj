@@ -1,16 +1,12 @@
-﻿    
-
-    <Project Sdk="Microsoft.NET.Sdk">
-    
-      <PropertyGroup>
-        <OutputType>Exe</OutputType>
-        <TargetFramework>net8.0</TargetFramework>
-        <PackAsTool>true</PackAsTool>
-        <ToolCommandName>UAP</ToolCommandName>
-        <PackageOutputPath>./pkg</PackageOutputPath>
-      </PropertyGroup>
-    
-    </Project>
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <PackAsTool>true</PackAsTool>
+    <ToolCommandName>UAP</ToolCommandName>
+    <PackageOutputPath>./pkg</PackageOutputPath>
+  </PropertyGroup>
+</Project>
 
 
 
