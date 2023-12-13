@@ -47,5 +47,4 @@ public class MyQueryable : IQueryable
  T4 - Generate code as a template
  Expression Tree - Repsentation of Code
  Reflection.Emit - IL
- 
- */
+  */
