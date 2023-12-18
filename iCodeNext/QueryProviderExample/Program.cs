@@ -13,15 +13,20 @@ ApplicationDbContext context = new ApplicationDbContext(dbContextOptions);
 
 
 //Func<User, bool> Check_Func = num => num.Id > 2;
- 
-//Expression<Func<int, bool>> Check_Exp = num => num > 2;
+
+Expression<Func<int, bool>> Check_Exp = num => num > 2;
+
+int i = 2;
+Expression<Func<int, bool>> Check_Exp_withParam = num => num > i;
 
 
 List<User> numbers = [];
 var result = numbers.Where(x => x.Id > 2).OrderBy(x => x.Name);
 
 
-var users = context.Users.Where(x => x.Id > 2).OrderBy(x => x.Id);
+_ = context.Users.Where(x => x.Id > 2)
+                 .OrderBy(x => x.Id)
+                 .Select(x => new { x.Id, x.Name });
 
 Console.ReadLine();
 
@@ -36,10 +41,12 @@ public class MyQueryable : IQueryable
 
     public IEnumerator GetEnumerator()
     {
-        Provider.Execute(Expression);
+        Provider.Execute(
+            );
         return null;
     }
 }
+
 
 
 /*
