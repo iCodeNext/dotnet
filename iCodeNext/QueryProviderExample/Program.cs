@@ -2,6 +2,7 @@
 using QueryProviderExample;
 using System.Collections;
 using System.Linq.Expressions;
+using System.Net.Http;
 
 var dbContextOptions = new DbContextOptionsBuilder<ApplicationDbContext>()
     .UseSqlServer("Server=DESKTOP-TVCSFN3\\MHA;Database=iCodeNext;Trusted_Connection=True;Encrypt=false")
@@ -41,11 +42,18 @@ public class MyQueryable : IQueryable
 
     public IEnumerator GetEnumerator()
     {
-        Provider.Execute(
-            );
+        Provider.Execute(Expression);
         return null;
     }
 }
+
+
+
+
+
+
+
+
 
 
 
@@ -55,3 +63,4 @@ public class MyQueryable : IQueryable
  Expression Tree - Repsentation of Code
  Reflection.Emit - IL
   */
+
