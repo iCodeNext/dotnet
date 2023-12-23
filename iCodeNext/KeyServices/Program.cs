@@ -12,6 +12,15 @@ var builder = WebApplication.CreateBuilder(args);
 
 var app = builder.Build();
 {
+
+
+    app.MapGet("/users/{userId:int}", (int userId) => { });
+    app.MapGet("/posts/{**slug:regex(^[a-z0-9]+$)}", (string slug) => { });
+    app.MapControllerRoute("Default", "{controller=Home}/{action=Index}/{Id?}");
+
+
+
+
     app.UseHttpsRedirection();
     app.UseAuthorization();
     app.MapControllers();
