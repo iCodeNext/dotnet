@@ -21,7 +21,6 @@ file class UserService
     }
 }
 
-
 file class UserController(UserService userService)
 {
     private readonly UserService _userService = userService;

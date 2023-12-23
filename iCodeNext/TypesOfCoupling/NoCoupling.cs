@@ -1,5 +1,5 @@
 ﻿namespace TypesOfCoupling;
-public class UserService
+file class UserService
 {
     public void InsertUser(string name, string email, string password)
     {

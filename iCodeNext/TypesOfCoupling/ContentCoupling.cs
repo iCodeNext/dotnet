@@ -1,7 +1,5 @@
 ﻿namespace TypesOfCoupling;
 
-
-
 file class User
 {
     public string Name { get; set; }

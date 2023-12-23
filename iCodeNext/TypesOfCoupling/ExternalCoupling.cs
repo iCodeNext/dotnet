@@ -9,20 +9,14 @@ file class User
 
 file class UserService
 {
-    #region CTOR
-    //private readonly IHttpClient _httpClient;
-    //public UserService(IHttpClient httpClient)
-    //{
-    //    _httpClient = httpClient
-    //} 
-    #endregion
+    private readonly IHttpClient _httpClient;
+    public UserService(IHttpClient httpClient)
+    {
+        _httpClient = httpClient;
+    }
     public void InsertUser(User user)
     {
-
-        HttpClient httpClient = new HttpClient();
-       // httpClient.Send(user);
-
-        //httpClient.Send();
+        _httpClient.Send(user);
     }
 }
 

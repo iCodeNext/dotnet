@@ -5,6 +5,7 @@ file class User
     public string Name { get; set; }
     public string Email { get; set; }
     public string Password { get; set; }
+    public int Code { get; set; }
 }
 file class UserService
 {
@@ -35,11 +36,11 @@ file class UserController(UserService userService)
             Password = password
         };
         _userService.InsertUser(model);
-       // Log(model);
+        Log(model.Email,model.Name);
     }
 
-    //public void Log(User user)
-    //{
-    //    Console.WriteLine($"Log {user.Email}");
-    //}
+    public void Log(string email,string name)
+    {
+        Console.WriteLine($"Log {email} {name}");
+    }
 }
