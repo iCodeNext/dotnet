@@ -6,7 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
     builder.Services.AddControllers();
     builder.Services.AddEndpointsApiExplorer();
     builder.Services.RegisterApplicationServices()
-           .RegisterPersistenceServices(builder.Configuration);
+                    .RegisterPersistenceServices(builder.Configuration);
 }
 var app = builder.Build();
 {

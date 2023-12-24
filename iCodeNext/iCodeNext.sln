@@ -61,6 +61,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QueryProviderExample", "Que
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TypesOfCoupling", "TypesOfCoupling\TypesOfCoupling.csproj", "{B7827C1E-E343-46D0-8375-DE2451BB7EB7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TypesOfCohesion", "TypesOfCohesion\TypesOfCohesion.csproj", "{02250309-65A7-4045-9A5D-1263D5992EA0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -139,6 +141,10 @@ Global
 		{B7827C1E-E343-46D0-8375-DE2451BB7EB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B7827C1E-E343-46D0-8375-DE2451BB7EB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B7827C1E-E343-46D0-8375-DE2451BB7EB7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02250309-65A7-4045-9A5D-1263D5992EA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02250309-65A7-4045-9A5D-1263D5992EA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02250309-65A7-4045-9A5D-1263D5992EA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02250309-65A7-4045-9A5D-1263D5992EA0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -169,6 +175,7 @@ Global
 		{21ED3783-B720-4E60-8233-BEFDCF069D85} = {C23BD19E-C05D-4AB5-9AA3-23D716D39A56}
 		{381EF6B5-22E3-4648-926A-D42EBFC804CC} = {21ED3783-B720-4E60-8233-BEFDCF069D85}
 		{B7827C1E-E343-46D0-8375-DE2451BB7EB7} = {BEA88CF1-3CF1-480F-85DE-41757978E672}
+		{02250309-65A7-4045-9A5D-1263D5992EA0} = {BEA88CF1-3CF1-480F-85DE-41757978E672}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2612291B-6B99-482B-9E5C-F43B9A4AAB95}
