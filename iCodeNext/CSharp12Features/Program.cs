@@ -1,24 +1,24 @@
-﻿
-public class Complain
+﻿public class Program
 {
-    public int MyProperty { get; set; }
-    public int MyProperty1 { get; set; }
-    public int MyProperty2 { get; set; }
-}
-
-public class ComplainSubClass : Complain
-{
-    public int MyProperty3 { get; set; }
-}
-
-public class Program
-{
-
     public static void Main(string[] args)
     {
-        ComplainSubClass ins_1 = new ComplainSubClass();
-        Complain complain = ins_1;
-
-        ComplainSubClass ins_2 = (ComplainSubClass)complain;
+        var lambda = (int x) => { return x * 8; };
     }
 }
+
+public class Person
+{
+    public int Id { get; set; }
+    public string Name { get; set; }
+}
+
+public static class PersonExtension
+{
+    public static void Run(this Person person)
+    {
+        Console.WriteLine("Run");
+    }
+}
+
+
+ 
