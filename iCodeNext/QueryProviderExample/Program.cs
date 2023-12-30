@@ -13,7 +13,7 @@ ApplicationDbContext context = new ApplicationDbContext(dbContextOptions);
 
 
 
-//Func<User, bool> Check_Func = num => num.Id > 2;
+Func<User, bool> Check_Func = num => num.Id > 2;
 
 Expression<Func<int, bool>> Check_Exp = num => num > 2;
 
@@ -24,8 +24,8 @@ Expression<Func<int, bool>> Check_Exp_withParam = num => num > i;
 List<User> numbers = [];
 var result = numbers.Where(x => x.Id > 2).OrderBy(x => x.Name);
 
-
-_ = context.Users.Where(x => x.Id > 2)
+int id = 2;
+var shape = context.Users.Where(x => x.Id > id)
                  .OrderBy(x => x.Id)
                  .Select(x => new { x.Id, x.Name });
 
@@ -45,6 +45,7 @@ public class MyQueryable : IQueryable
         Provider.Execute(Expression);
         return null;
     }
+
 }
 
 
