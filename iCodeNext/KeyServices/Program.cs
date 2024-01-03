@@ -14,9 +14,10 @@ var app = builder.Build();
 {
 
 
-    app.MapGet("/users/{userId:int}", (int userId) => { });
-    app.MapGet("/posts/{**slug:regex(^[a-z0-9]+$)}", (string slug) => { });
-    app.MapControllerRoute("Default", "{controller=Home}/{action=Index}/{Id?}");
+    app.MapGet("/", () => "No short-circuiting!");
+    app.MapHealthChecks("/healthz").ShortCircuit();
+    app.MapShortCircuit(404, "robots.txt", "favicon.ico");
+    
 
 
 

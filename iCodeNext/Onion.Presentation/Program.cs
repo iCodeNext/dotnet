@@ -22,4 +22,9 @@ app.UseAuthorization();
 
 app.MapControllers();
 
+app.Use(async (context, _next) =>
+{
+  await  _next();
+});
+
 app.Run();
