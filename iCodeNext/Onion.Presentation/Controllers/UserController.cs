@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Onion.Domain.Entities;
-using Onion.Domain.Services;
+using Onion.Application.Interfaces;
 
 namespace Hexagonal.API.Controllers;
 public class UserController : Controller
@@ -16,5 +16,6 @@ public class UserController : Controller
     {
         _userService.Insert(model);
         return View();
+
     }
 }

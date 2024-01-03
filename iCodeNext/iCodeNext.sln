@@ -59,41 +59,41 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IQueryable", "IQueryable", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QueryProviderExample", "QueryProviderExample\QueryProviderExample.csproj", "{381EF6B5-22E3-4648-926A-D42EBFC804CC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TypesOfCoupling", "TypesOfCoupling\TypesOfCoupling.csproj", "{B7827C1E-E343-46D0-8375-DE2451BB7EB7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TypesOfCoupling", "TypesOfCoupling\TypesOfCoupling.csproj", "{B7827C1E-E343-46D0-8375-DE2451BB7EB7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TypesOfCohesion", "TypesOfCohesion\TypesOfCohesion.csproj", "{02250309-65A7-4045-9A5D-1263D5992EA0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TypesOfCohesion", "TypesOfCohesion\TypesOfCohesion.csproj", "{02250309-65A7-4045-9A5D-1263D5992EA0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Architecture", "Architecture", "{8FD1FD61-8915-4BCD-A240-2383AB1F9E32}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoArchitecture", "NoArchitecture\NoArchitecture.csproj", "{79D1B02D-A515-4AC9-BB35-13FA7FDC7D55}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NoArchitecture", "NoArchitecture\NoArchitecture.csproj", "{79D1B02D-A515-4AC9-BB35-13FA7FDC7D55}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NoArch", "NoArch", "{E0547192-04EB-4585-9AA3-C8285BDE9E24}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NLayer", "NLayer", "{061E1B95-3BC2-4DCA-ACC1-F20F697227BC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NLayer.Api", "NLayer.Api\NLayer.Api.csproj", "{5A1D6388-2BBA-43E4-AD6E-E58FA77D6889}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NLayer.Api", "NLayer.Api\NLayer.Api.csproj", "{5A1D6388-2BBA-43E4-AD6E-E58FA77D6889}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NLayer.DataAccess", "NLayer.DataAccess\NLayer.DataAccess.csproj", "{1C45D747-2562-4068-AC90-27401F0B513C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NLayer.DataAccess", "NLayer.DataAccess\NLayer.DataAccess.csproj", "{1C45D747-2562-4068-AC90-27401F0B513C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NLayer.Application", "NLayer.Application\NLayer.Application.csproj", "{9AD1AF18-CEB2-40BD-9E0B-5F6D4700AEBB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NLayer.Application", "NLayer.Application\NLayer.Application.csproj", "{9AD1AF18-CEB2-40BD-9E0B-5F6D4700AEBB}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Hexagonal", "Hexagonal", "{8F2DB51C-DF2B-4E3D-BB15-FA5F0E97220F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hexagonal.DataAccess", "Hexagonal.DataAccess\Hexagonal.DataAccess.csproj", "{1342DDDF-A94F-4038-ACAD-188A70C346EA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hexagonal.DataAccess", "Hexagonal.DataAccess\Hexagonal.DataAccess.csproj", "{1342DDDF-A94F-4038-ACAD-188A70C346EA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hexagonal.Application", "Hexagonal.Application\Hexagonal.Application.csproj", "{E615572A-4614-4C40-95CE-D08ED9775516}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hexagonal.Application", "Hexagonal.Application\Hexagonal.Application.csproj", "{E615572A-4614-4C40-95CE-D08ED9775516}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hexagonal.API", "Hexagonal.API\Hexagonal.API.csproj", "{3BB21CD0-B3FB-47DB-8DA7-236007C80B30}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hexagonal.API", "Hexagonal.API\Hexagonal.API.csproj", "{3BB21CD0-B3FB-47DB-8DA7-236007C80B30}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Onion", "Onion", "{EECDDC55-8313-40F5-AACE-2E583674CE3E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Onion.Services", "Onion.Services\Onion.Services.csproj", "{C539D34D-F31F-49BC-897D-F3CA38A567AC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Onion.Services", "Onion.Services\Onion.Services.csproj", "{C539D34D-F31F-49BC-897D-F3CA38A567AC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Onion.Domain", "Onion.Domain\Onion.Domain.csproj", "{1CBE29C5-8F90-4F58-B09C-BFD686A3FA44}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Onion.Domain", "Onion.Domain\Onion.Domain.csproj", "{1CBE29C5-8F90-4F58-B09C-BFD686A3FA44}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Onion.Infrastructure", "Onion.Infrastructure\Onion.Infrastructure.csproj", "{44A9283F-B250-400C-92B1-DE1551BD2B36}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Onion.Infrastructure", "Onion.Infrastructure\Onion.Infrastructure.csproj", "{44A9283F-B250-400C-92B1-DE1551BD2B36}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Onion.Presentation", "Onion.Presentation\Onion.Presentation.csproj", "{FA63C87D-810D-4295-B401-EE726CDFBAD1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Onion.Presentation", "Onion.Presentation\Onion.Presentation.csproj", "{FA63C87D-810D-4295-B401-EE726CDFBAD1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{D56B6913-BCCC-4670-BB4A-EFE64D3A7299}"
 EndProject
@@ -101,9 +101,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Clean", "Clean", "{CEF84BB3
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{0B85DB06-EF83-424D-9C23-3849F4D639FA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clean.Domain", "Clean.Domain\Clean.Domain.csproj", "{A2A16F69-35C6-495A-A877-0C0E0334F50F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Clean.Domain", "Clean.Domain\Clean.Domain.csproj", "{A2A16F69-35C6-495A-A877-0C0E0334F50F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clean.Application", "Clean.Application\Clean.Application.csproj", "{3B36BF3C-65D7-4DF3-AE11-2677380EECE1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Clean.Application", "Clean.Application\Clean.Application.csproj", "{3B36BF3C-65D7-4DF3-AE11-2677380EECE1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clean.Presentation", "Clean.Presentation\Clean.Presentation.csproj", "{55258DDD-D5DC-467D-AE7A-E5BB18BC261C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -239,6 +241,10 @@ Global
 		{3B36BF3C-65D7-4DF3-AE11-2677380EECE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3B36BF3C-65D7-4DF3-AE11-2677380EECE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3B36BF3C-65D7-4DF3-AE11-2677380EECE1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55258DDD-D5DC-467D-AE7A-E5BB18BC261C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55258DDD-D5DC-467D-AE7A-E5BB18BC261C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55258DDD-D5DC-467D-AE7A-E5BB18BC261C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55258DDD-D5DC-467D-AE7A-E5BB18BC261C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -290,6 +296,7 @@ Global
 		{0B85DB06-EF83-424D-9C23-3849F4D639FA} = {CEF84BB3-3AA7-4409-9407-BAB093CE6387}
 		{A2A16F69-35C6-495A-A877-0C0E0334F50F} = {0B85DB06-EF83-424D-9C23-3849F4D639FA}
 		{3B36BF3C-65D7-4DF3-AE11-2677380EECE1} = {0B85DB06-EF83-424D-9C23-3849F4D639FA}
+		{55258DDD-D5DC-467D-AE7A-E5BB18BC261C} = {CEF84BB3-3AA7-4409-9407-BAB093CE6387}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2612291B-6B99-482B-9E5C-F43B9A4AAB95}

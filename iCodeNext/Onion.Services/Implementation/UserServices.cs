@@ -1,11 +1,6 @@
 ﻿using Onion.Domain.Entities;
-using Onion.Domain.Services;
+using Onion.Domain.Interfaces;
 using Onion.Services.Context;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Onion.Services.Implementation;
 public class UserServices : IUserServices
@@ -17,10 +12,10 @@ public class UserServices : IUserServices
         _dbContext = dbContext;
     }
 
-    public void Delete(User user)
-    {
-        _dbContext.Users.Remove(user);
-    }
+    //public void Delete(User user)
+    //{
+    //    _dbContext.Users.Remove(user);
+    //}
 
     public User FindById(int id)
     {

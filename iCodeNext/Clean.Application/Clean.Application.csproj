@@ -16,4 +16,8 @@
     <ProjectReference Include="..\Clean.Domain\Clean.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Users\Commands\UpdateUser\" />
+  </ItemGroup>
+
 </Project>
