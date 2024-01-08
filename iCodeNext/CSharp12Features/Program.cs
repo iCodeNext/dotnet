@@ -1,24 +1,31 @@
-﻿public class Program
+﻿namespace a;
+#nullable disable
+
+
+    public record Person_Record(string Name,string Family);
+    
+    public class Person_Class
+    {
+        public string Name { get; set; }
+    }
+
+public class Program
 {
     public static void Main(string[] args)
     {
-        var lambda = (int x) => { return x * 8; };
-    }
-}
+        var p1 = new Person_Record("Mohammad","Karimi");
+        var p2 = new Person_Record("Mohammad", "Karimi");
+         
+        Console.WriteLine(p1.Equals(p2)); // true
 
-public class Person
-{
-    public int Id { get; set; }
-    public string Name { get; set; }
-}
+        var p3 = new Person_Class() { Name = "Mohammad" };
+        var p4 = new Person_Class() { Name = "Mohammad" };
 
-public static class PersonExtension
-{
-    public static void Run(this Person person)
-    {
-        Console.WriteLine("Run");
+        Console.WriteLine(p3.Equals(p4)); // False
     }
 }
 
 
- 
+
+
+
