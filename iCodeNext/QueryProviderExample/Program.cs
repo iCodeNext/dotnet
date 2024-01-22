@@ -7,26 +7,76 @@ var dbContextOptions = new DbContextOptionsBuilder<ApplicationDbContext>()
                            .EnableSensitiveDataLogging()
                            .Options;
 
-ApplicationDbContext context = new (dbContextOptions);
-context.Database.EnsureDeleted();
-context.Database.EnsureCreated();
+ApplicationDbContext context = new(dbContextOptions);
+//context.Database.EnsureDeleted();
+//context.Database.EnsureCreated();
 
 
-var query = context.Users
-                   .Where(x => x.Id > 4 && x.Name != null)
-                   .ToList();
+//var ticketA = context.Tickets.Single(e => e.Id == 1);
+//var TicketB = new Ticket { Id = 1, Title = "iCodeNext" };
+
+//try
+//{
+//    context.Update(TicketB); // This will throw
+//}
+//catch (Exception e)
+//{
+//    Console.WriteLine($"{e.GetType().FullName}: {e.Message}");
+//}
+
+//var ticketA = context.Tickets.AsNoTracking().Single(e => e.Id == 1);
+//var TicketB = new Ticket { Id = 1, Title = "iCodeNext" };
+
+//try
+//{
+//    context.Update(TicketB); // This will throw
+//}
+//catch (Exception e)
+//{
+//    Console.WriteLine($"{e.GetType().FullName}: {e.Message}");
+//}
+
+var ticketA = context.Tickets
+    .Include(x => x.TicketDetails)
+    .SelectMany(g => g.TicketDetails, (parent, child) => parent)
+    .ToList();
+
+Console.WriteLine("");
 
 
-//var query = context.Users
-//                   .Where(x => x.Id > 4 && true)
-//                   .ToList();
-
-//var query = context.Users
-//                   .Where(x => x.Id > 4)
-//                   .ToList();
 
 
-    context.Users.Where(x => x.Name == "Mohammad")
-                 .OrderBy(x => x.Id)
-                 .Take(5)
-                 .Select(x => new { x.Id, x.Name });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#region Seed
+//context.Tickets.Add(new Ticket() { State = TicketState.Added, Title = "Ticket_1" });
+
+//context.SaveChanges();
+
+//context.TicketDetails.Add(new TicketDetails() { TicketId = 1, Title = "Detail_Ticket_1" });
+
+//context.TicketDetails.Add(new TicketDetails() { TicketId = 1, Title = "Detail_Ticket_1" });
+//context.SaveChanges();
+#endregion
