@@ -38,6 +38,7 @@ ApplicationDbContext context = new(dbContextOptions);
 
 var ticketA = context.Tickets
     .Include(x => x.TicketDetails)
+    .AsNoTrackingWithIdentityResolution()
     .SelectMany(g => g.TicketDetails, (parent, child) => parent)
     .ToList();
 
