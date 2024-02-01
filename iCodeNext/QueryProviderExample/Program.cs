@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Azure.Core;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using QueryProviderExample;
@@ -11,6 +12,12 @@ var dbContextOptions = new DbContextOptionsBuilder<ApplicationDbContext>()
                            .Options;
 
 ApplicationDbContext context = new(dbContextOptions);
-//context.Database.EnsureDeleted();
-//context.Database.EnsureCreated();
+context.Database.EnsureDeleted();
+context.Database.EnsureCreated();
 
+
+await context.Posts.Where(x => x.Id == 1)
+                   .Select(x => new GetPostDto(x.Id, x.Title, x.Description))
+                   .FirstOrDefaultAsync(x => x.Id == 1);
+ 
+await context.Posts.Select(x => new GetPostDto(x.Id, x.Title,"")).FirstOrDefaultAsync(x => x.Id == 1);
