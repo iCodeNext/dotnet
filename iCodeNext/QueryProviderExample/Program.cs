@@ -3,6 +3,7 @@
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using QueryProviderExample;
+using System.Transactions;
 
 var connection = "Server=DESKTOP-TVCSFN3\\MHA;Database=iCodeNext;Trusted_Connection=True;Encrypt=false";
 
@@ -60,39 +61,53 @@ context.Database.EnsureCreated();
 //}
 
 //#
-using var transaction = context.Database.BeginTransaction();
-var auther = new Auther { Name = "Mohammad" };
-var post = new Post { Title = "C# Books_123" };
-try
-{
-    context.Authors.Add(auther);
-    context.SaveChanges();
+//using var transaction = context.Database.BeginTransaction();
+//var auther = new Auther { Name = "Mohammad" };
+//var post = new Post { Title = "C# Books_123" };
+//try
+//{
+//    context.Authors.Add(auther);
+//    context.SaveChanges();
 
-    transaction.CreateSavepoint("Auther_Added");
+//    transaction.CreateSavepoint("Auther_Added");
 
-    post.AutherId = auther.Id;
-    context.Posts.Add(post);
-    context.SaveChanges();
+//    post.AutherId = auther.Id;
+//    context.Posts.Add(post);
+//    context.SaveChanges();
 
-    transaction.Commit();
-}
-catch (Exception)
-{
-    post.Title = "C# New";
-    transaction.RollbackToSavepoint("Auther_Added");
-    context.Posts.Add(post);
-    context.SaveChanges();
+//    transaction.Commit();
+//}
+//catch (Exception)
+//{
+//    post.Title = "C# New";
+//    transaction.RollbackToSavepoint("Auther_Added");
+//    context.Posts.Add(post);
+//    context.SaveChanges();
 
-    transaction.Commit();
-}
-
+//    transaction.Commit();
+//}
 
 //#
+//using (var scope = new TransactionScope(
+//           TransactionScopeOption.Required,
+//           new TransactionOptions { IsolationLevel = IsolationLevel.ReadCommitted }))
+//{
+//    try
+//    {
+//        var auther = new Auther { Name = "Mohammad" };
+//        context.Authors.Add(auther);
+//        context.SaveChanges();
 
-//using var sqlConnection = new SqlTransaction();
-//sqlConnection.Open();
+//        var post = new Post { AutherId = auther.Id, Title = "C# Books" };
+//        context.Posts.Add(post);
 
-//using var transaction = sqlConnection.BeginTransaction();
+//        context.SaveChanges();
 
+//        scope.Complete();
+//    }
+//    catch (Exception e)
+//    {
 
+//    }
+//}
 Console.ReadKey();
