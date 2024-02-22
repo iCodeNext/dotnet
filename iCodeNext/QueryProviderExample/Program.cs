@@ -65,31 +65,31 @@ context.Database.EnsureCreated();
 //}
 
 //#
-using var transaction = context.Database.BeginTransaction();
-var auther = new Auther { Name = "Mohammad" };
-var post = new Post { Title = "C# Books_123" };
-try
-{
-    context.Authors.Add(auther);
-    context.SaveChanges();
+//using var transaction = context.Database.BeginTransaction();
+//var auther = new Auther { Name = "Mohammad" };
+//var post = new Post { Title = "C# Books_123" };
+//try
+//{
+//    context.Authors.Add(auther);
+//    context.SaveChanges();
 
-    transaction.CreateSavepoint("Auther_Added");
+//    transaction.CreateSavepoint("Auther_Added");
 
-    post.AutherId = auther.Id;
-    context.Posts.Add(post);
-    context.SaveChanges();
+//    post.AutherId = auther.Id;
+//    context.Posts.Add(post);
+//    context.SaveChanges();
 
-    transaction.Commit();
-}
-catch (Exception)
-{
-    post.Title = "C# New";
-    transaction.RollbackToSavepoint("Auther_Added");
-    context.Posts.Add(post);
-    context.SaveChanges();
+//    transaction.Commit();
+//}
+//catch (Exception)
+//{
+//    post.Title = "C# New";
+//    transaction.RollbackToSavepoint("Auther_Added");
+//    context.Posts.Add(post);
+//    context.SaveChanges();
 
-    transaction.Commit();
-}
+//    transaction.Commit();
+//}
 
 //#
 //using (var scope = new TransactionScope(
@@ -114,6 +114,7 @@ catch (Exception)
 
 //    }
 //}
+
 Console.ReadKey();
 
 
