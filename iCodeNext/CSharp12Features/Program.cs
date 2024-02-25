@@ -1,5 +1,7 @@
 ﻿using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Running;
+using Polly;
+using Polly.Contrib.WaitAndRetry;
 using System.Collections.Frozen;
 using System.Collections.Immutable;
 
@@ -9,19 +11,26 @@ public class Program
 {
     static void Main()
     {
-        //int capacity = 100_000;
-        //List<int> list = [];
-        //for (int i = 0; i < capacity; i++)
-        //    list.Add(i);
 
-        //list.Contains(15212);
-        //var imutable_1 = list.ToImmutableList();
-        //imutable_1.Add(6556);
+        Policy.Handle<TimeoutException>().WaitAndRetry(new[]
+        {
+            TimeSpan.FromSeconds(1),
+            TimeSpan.FromSeconds(2),
+            TimeSpan.FromSeconds(4),
+            TimeSpan.FromSeconds(8),
+            TimeSpan.FromSeconds(16)
+        });
 
-        //var frozen = list.ToFrozenSet();
-        //frozen.Contains(6556);
-        
-        BenchmarkRunner.Run<FrozenBenchmark>();
+
+        var delay = Backoff.DecorrelatedJitterBackoffV2
+            (medianFirstRetryDelay: TimeSpan.FromSeconds(1),
+             retryCount: 5);
+
+        Policy.Handle<TimeoutException>()
+              .WaitAndRetryAsync(delay);
+
+
+
     }
 }
 
@@ -66,24 +75,24 @@ public class Program
 //    }
 //}
 
-[MemoryDiagnoser]
-public class FrozenBenchmark
-{
-    private readonly int[] from = Enumerable.Range(0, 1000).ToArray();
+//[MemoryDiagnoser]
+//public class FrozenBenchmark
+//{
+//    private readonly int[] from = Enumerable.Range(0, 1000).ToArray();
 
-    [Benchmark(Baseline = true)]
-    public List<int> CreateList() => from.ToList();
+//    [Benchmark(Baseline = true)]
+//    public List<int> CreateList() => from.ToList();
 
-    [Benchmark]
-    public FrozenSet<int> CreateFrozenList()
-    {
-        int[] from = Enumerable.Range(0, 1000).ToArray();
-        return from.ToFrozenSet();
-    }
+//    [Benchmark]
+//    public FrozenSet<int> CreateFrozenList()
+//    {
+//        int[] from = Enumerable.Range(0, 1000).ToArray();
+//        return from.ToFrozenSet();
+//    }
 
-    [Benchmark]
-    public HashSet<int> CreateHashSet() => from.ToHashSet();
+//    [Benchmark]
+//    public HashSet<int> CreateHashSet() => from.ToHashSet();
 
-    [Benchmark]
-    public ImmutableHashSet<int> CreateImmutableHashSet() => from.ToImmutableHashSet();
-}
+//    [Benchmark]
+//    public ImmutableHashSet<int> CreateImmutableHashSet() => from.ToImmutableHashSet();
+//}
