@@ -18,6 +18,7 @@ public class Program
                 //});
                 services.AddHostedService<WorkerOne>();
                 services.AddHostedService<WorkerTwo>();
+                services.AddHostedService<WorkerThree>();
             }).Build();
 
         host.Run();
@@ -55,6 +56,45 @@ public class WorkerTwo : IHostedService
     }
 }
 
+
+public class WorkerThree : IHostedLifecycleService
+{
+    public async Task StartAsync(CancellationToken cancellationToken)
+    {
+        await Task.Delay(5000, cancellationToken);
+        Console.WriteLine("WorkerTwo is StartAsync!");
+    }
+
+    public async Task StartedAsync(CancellationToken cancellationToken)
+    {
+        await Task.Delay(1000, cancellationToken);
+        Console.WriteLine("WorkerTwo is StartedAsync!");
+    }
+
+    public async Task StartingAsync(CancellationToken cancellationToken)
+    {
+        await Task.Delay(1000, cancellationToken);
+        Console.WriteLine("WorkerTwo is StartingAsync!");
+    }
+
+    public async Task StopAsync(CancellationToken cancellationToken)
+    {
+        await Task.Delay(5000, cancellationToken);
+        Console.WriteLine("WorkerTwo is StopAsync!");
+    }
+
+    public async Task StoppedAsync(CancellationToken cancellationToken)
+    {
+        await Task.Delay(1000, cancellationToken);
+        Console.WriteLine("WorkerTwo is StoppedAsync!");
+    }
+
+    public async Task StoppingAsync(CancellationToken cancellationToken)
+    {
+        await Task.Delay(1000, cancellationToken);
+        Console.WriteLine("WorkerTwo is StoppingAsync!");
+    }
+}
 
 
 
