@@ -1,38 +1,90 @@
-﻿using BenchmarkDotNet.Attributes;
-using BenchmarkDotNet.Running;
-using Polly;
-using Polly.Contrib.WaitAndRetry;
-using System.Collections.Frozen;
-using System.Collections.Immutable;
+﻿using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 
 namespace GenericConstraint;
 
+
 public class Program
 {
-    static void Main()
+    public static void Main(string[] args)
     {
+        var host = Host.CreateDefaultBuilder(args)
+            .ConfigureServices(services =>
+            {
+                //services.Configure<HostOptions>(options =>
+                //{
+                //    options.ServicesStartConcurrently = true;
+                //    options.ServicesStopConcurrently = true;
+                //});
+                services.AddHostedService<WorkerOne>();
+                services.AddHostedService<WorkerTwo>();
+            }).Build();
 
-        Policy.Handle<TimeoutException>().WaitAndRetry(new[]
-        {
-            TimeSpan.FromSeconds(1),
-            TimeSpan.FromSeconds(2),
-            TimeSpan.FromSeconds(4),
-            TimeSpan.FromSeconds(8),
-            TimeSpan.FromSeconds(16)
-        });
-
-
-        var delay = Backoff.DecorrelatedJitterBackoffV2
-            (medianFirstRetryDelay: TimeSpan.FromSeconds(1),
-             retryCount: 5);
-
-        Policy.Handle<TimeoutException>()
-              .WaitAndRetryAsync(delay);
-
-
-
+        host.Run();
     }
 }
+
+public class WorkerOne : IHostedService
+{
+    public async Task StartAsync(CancellationToken cancellationToken)
+    {
+        await Task.Delay(5000, cancellationToken);
+        Console.WriteLine("WorkerOne is Started!");
+    }
+
+    public async Task StopAsync(CancellationToken cancellationToken)
+    {
+        await Task.Delay(5000, cancellationToken);
+        Console.WriteLine("WorkerOne is Stoped!");
+    }
+}
+
+
+public class WorkerTwo : IHostedService
+{
+    public async Task StartAsync(CancellationToken cancellationToken)
+    {
+        await Task.Delay(5000, cancellationToken);
+        Console.WriteLine("WorkerTwo is Started!");
+    }
+
+    public async Task StopAsync(CancellationToken cancellationToken)
+    {
+        await Task.Delay(5000, cancellationToken);
+        Console.WriteLine("WorkerTwo is Stoped!");
+    }
+}
+
+
+
+
+
+//public class Program
+//{
+//    static void Main()
+//    {
+
+//Policy.Handle<TimeoutException>().WaitAndRetry(new[]
+//{
+//    TimeSpan.FromSeconds(1),
+//    TimeSpan.FromSeconds(2),
+//    TimeSpan.FromSeconds(4),
+//    TimeSpan.FromSeconds(8),
+//    TimeSpan.FromSeconds(16)
+//});
+
+
+//var delay = Backoff.DecorrelatedJitterBackoffV2
+//    (medianFirstRetryDelay: TimeSpan.FromSeconds(1),
+//     retryCount: 5);
+
+//Policy.Handle<TimeoutException>()
+//      .WaitAndRetryAsync(delay);
+
+
+
+//    }
+//}
 
 //[MemoryDiagnoser]
 //public class FrozenBenchmark
