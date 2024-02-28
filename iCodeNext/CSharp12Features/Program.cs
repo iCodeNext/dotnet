@@ -11,14 +11,15 @@ public class Program
         var host = Host.CreateDefaultBuilder(args)
             .ConfigureServices(services =>
             {
-                //services.Configure<HostOptions>(options =>
-                //{
-                //    options.ServicesStartConcurrently = true;
-                //    options.ServicesStopConcurrently = true;
-                //});
+                services.Configure<HostOptions>(options =>
+                {
+                    options.ServicesStartConcurrently = true;
+                    options.ServicesStopConcurrently = true;
+                });
                 services.AddHostedService<WorkerOne>();
                 services.AddHostedService<WorkerTwo>();
                 services.AddHostedService<WorkerThree>();
+                services.AddHostedService<WorkerFour>();
             }).Build();
 
         host.Run();
@@ -30,7 +31,7 @@ public class WorkerOne : IHostedService
     public async Task StartAsync(CancellationToken cancellationToken)
     {
         await Task.Delay(5000, cancellationToken);
-        Console.WriteLine("WorkerOne is Started!");
+        Console.WriteLine($"WorkerOne is Started! {DateTime.Now}");
     }
 
     public async Task StopAsync(CancellationToken cancellationToken)
@@ -40,13 +41,12 @@ public class WorkerOne : IHostedService
     }
 }
 
-
 public class WorkerTwo : IHostedService
 {
     public async Task StartAsync(CancellationToken cancellationToken)
     {
         await Task.Delay(5000, cancellationToken);
-        Console.WriteLine("WorkerTwo is Started!");
+        Console.WriteLine($"WorkerTwo is Started! {DateTime.Now}");
     }
 
     public async Task StopAsync(CancellationToken cancellationToken)
@@ -56,46 +56,56 @@ public class WorkerTwo : IHostedService
     }
 }
 
-
 public class WorkerThree : IHostedLifecycleService
 {
+    public async Task StartingAsync(CancellationToken cancellationToken)
+    {
+        await Task.Delay(10000, cancellationToken);
+        Console.WriteLine($"WorkerThree is StartingAsync! {DateTime.Now}");
+    }
     public async Task StartAsync(CancellationToken cancellationToken)
     {
         await Task.Delay(5000, cancellationToken);
-        Console.WriteLine("WorkerTwo is StartAsync!");
+        Console.WriteLine($"WorkerThree is StartAsync! {DateTime.Now}");
     }
 
     public async Task StartedAsync(CancellationToken cancellationToken)
     {
         await Task.Delay(1000, cancellationToken);
-        Console.WriteLine("WorkerTwo is StartedAsync!");
-    }
-
-    public async Task StartingAsync(CancellationToken cancellationToken)
-    {
-        await Task.Delay(1000, cancellationToken);
-        Console.WriteLine("WorkerTwo is StartingAsync!");
-    }
-
-    public async Task StopAsync(CancellationToken cancellationToken)
-    {
-        await Task.Delay(5000, cancellationToken);
-        Console.WriteLine("WorkerTwo is StopAsync!");
-    }
-
-    public async Task StoppedAsync(CancellationToken cancellationToken)
-    {
-        await Task.Delay(1000, cancellationToken);
-        Console.WriteLine("WorkerTwo is StoppedAsync!");
+        Console.WriteLine($"WorkerThree is StartedAsync! {DateTime.Now}");
     }
 
     public async Task StoppingAsync(CancellationToken cancellationToken)
     {
         await Task.Delay(1000, cancellationToken);
-        Console.WriteLine("WorkerTwo is StoppingAsync!");
+        Console.WriteLine("WorkerThree is StoppingAsync!");
     }
+    public async Task StopAsync(CancellationToken cancellationToken)
+    {
+        await Task.Delay(5000, cancellationToken);
+        Console.WriteLine("WorkerThree is StopAsync!");
+    }
+
+    public async Task StoppedAsync(CancellationToken cancellationToken)
+    {
+        await Task.Delay(1000, cancellationToken);
+        Console.WriteLine("WorkerThree is StoppedAsync!");
+    }
+
 }
 
+
+public class WorkerFour : BackgroundService
+{
+    protected override async Task ExecuteAsync(CancellationToken stoppingToken)
+    {
+        while (!stoppingToken.IsCancellationRequested)
+        {
+            await Task.Delay(1000, stoppingToken);
+            Console.WriteLine("WorkerFour is ExecuteAsync!");
+        }
+    }
+}
 
 
 
