@@ -9,19 +9,20 @@ public class AddUserCommandHandler : IRequestHandler<AddUserCommand, int>
 {
     private readonly IUnitOfWork _uow;
     private readonly IUserRepository _userRepository;
-    private readonly IOrderRepository _orderRepository;
-    public AddUserCommandHandler(IUnitOfWork uow, IUserRepository userRepository, IOrderRepository orderRepository)
+    public AddUserCommandHandler(IUnitOfWork uow, IUserRepository userRepository)
     {
         _uow = uow;
         _userRepository = userRepository;
-        _orderRepository = orderRepository;
     }
 
     public async Task<int> Handle(AddUserCommand request, CancellationToken cancellationToken)
     {
-        _userRepository.Add(new User { });
-        _orderRepository.Delete();
+        _userRepository.Add(new User() { });
 
-        return await _uow.SaveAsync();
+        //
+        //
+
+        await _uow.SaveAsync();
+        return 0;
     }
 }

@@ -2,21 +2,24 @@
 
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Storage;
 using QueryProviderExample;
+using System.Reflection.Metadata;
 using System.Transactions;
 
-var connection = "Server=DESKTOP-TVCSFN3\\MHA;Database=iCodeNext;Trusted_Connection=True;Encrypt=false";
-
+var connectionString = "Server=DESKTOP-TVCSFN3\\MHA;Database=iCodeNext;Trusted_Connection=True;Encrypt=false";
+//var connection = new SqlConnection(connectionString);
 var dbContextOptions = new DbContextOptionsBuilder<ApplicationDbContext>()
-                           .UseSqlServer(connection)
+                           .UseSqlServer(connectionString)
                            .LogTo(Console.WriteLine, Microsoft.Extensions.Logging.LogLevel.Information)
                            .EnableSensitiveDataLogging()
                            .Options;
 
 ApplicationDbContext context = new(dbContextOptions);
-context.Database.EnsureDeleted();
-context.Database.EnsureCreated();
+ context.Database.EnsureDeleted();
+ context.Database.EnsureCreated();
 
+#region MyRegion
 
 
 //context.Authors.Add(new Auther { Name = "Mohammad" });
@@ -51,69 +54,96 @@ context.Database.EnsureCreated();
 //try
 //{
 
-//	var auther = new Auther { Name = "Mohammad" };
-//	context.Authors.Add(auther);
-//	context.SaveChanges();
-//	context.Posts.Add(new Post { AutherId = auther.Id, Title = "C# Books" });
-//	context.SaveChanges();
+//    var auther = new Auther { Name = "Mohammad" };
+//    context.Authors.Add(auther);
+//    context.SaveChanges();
+//    context.Posts.Add(new Post { AutherId = auther.Id, Title = "C# Books" });
+//    context.SaveChanges();
 
-//	transaction.Commit();
+//    transaction.Commit();
 //}
 //catch (Exception)
 //{
-//	transaction.Rollback();
+//    transaction.Rollback();
 //}
 
-#
-using var transaction = context.Database.BeginTransaction(System.Data.IsolationLevel.);
-var auther = new Auther { Name = "Mohammad" };
-var post = new Post { Title = "C# Books_123" };
-try
-{
-    context.Authors.Add(auther);
-    context.SaveChanges();
-
-    transaction.CreateSavepoint("Auther_Added");
-
-    post.AutherId = auther.Id;
-    context.Posts.Add(post);
-    context.SaveChanges();
-
-    transaction.Commit();
-}
-catch (Exception)
-{
-    post.Title = "C# New";
-    transaction.RollbackToSavepoint("Auther_Added");
-    context.Posts.Add(post);
-    context.SaveChanges();
-
-    transaction.Commit();
-}
-
-//#
-//using (var scope = new TransactionScope(
-//           TransactionScopeOption.Required,
-//           new TransactionOptions { IsolationLevel = IsolationLevel.ReadCommitted }))
+//using var transaction = context.Database.BeginTransaction(System.Data.IsolationLevel.);
+//var auther = new Auther { Name = "Mohammad" };
+//var post = new Post { Title = "C# Books_123" };
+//try
 //{
-//    try
-//    {
-//        var auther = new Auther { Name = "Mohammad" };
-//        context.Authors.Add(auther);
-//        context.SaveChanges();
+//    context.Authors.Add(auther);
+//    context.SaveChanges();
 
-//        var post = new Post { AutherId = auther.Id, Title = "C# Books" };
-//        context.Posts.Add(post);
+//    transaction.CreateSavepoint("Auther_Added");
 
-//        context.SaveChanges();
+//    post.AutherId = auther.Id;
+//    context.Posts.Add(post);
+//    context.SaveChanges();
 
-//        scope.Complete();
-//    }
-//    catch (Exception e)
-//    {
-
-//    }
+//    transaction.Commit();
 //}
+//catch (Exception)
+//{
+//    post.Title = "C# New";
+//    transaction.RollbackToSavepoint("Auther_Added");
+//    context.Posts.Add(post);
+//    context.SaveChanges();
+
+//    transaction.Commit();
+//}
+
+#endregion
+
+//using var context1 = new ApplicationDbContext(dbContextOptions);
+//using var transaction = context1.Database.BeginTransaction();
+//try
+//{
+//    var auther = new Auther { Name = "Mohammad" };
+//    context1.Authors.Add(auther);
+//    context1.SaveChanges();
+
+//    using var context2 = new ApplicationDbContext(dbContextOptions);
+//    context2.Database.UseTransaction(transaction.GetDbTransaction());
+//    var post = new Post { AutherId = auther.Id, Title = "C# Books" };
+//    context2.Posts.Add(post);
+//    context2.SaveChanges();
+
+//    transaction.Commit();
+//}
+//catch (Exception)
+//{
+//    transaction.Rollback();
+//}
+
+#region TransactionScope
+
+using (var scope = new TransactionScope(
+           TransactionScopeOption.Required,
+           new TransactionOptions { IsolationLevel = IsolationLevel.ReadCommitted }))
+{
+    try
+    {
+        using var db_context = new ApplicationDbContext(dbContextOptions);
+        var auther = new Auther { Name = "Mohammad" };
+        db_context.Authors.Add(auther);
+        db_context.SaveChanges();
+
+        var post = new Post { AutherId = auther.Id, Title = "C# Books_123" };
+        db_context.Posts.Add(post);
+
+        db_context.SaveChanges();
+
+        scope.Complete();
+    }
+    catch (Exception e)
+    {
+        
+    }
+}
+#endregion
+
+
 
 Console.ReadKey();
 

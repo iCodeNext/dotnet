@@ -5,7 +5,10 @@ using WithIn.Infrastructure.Context;
 namespace WithIn.Infrastructure.Repositories;
 
 public class UserRepository(ApplicationDbContext dbContext)
-    : GenericRepository<User>(dbContext), IUserRepository
 {
-
+    protected readonly ApplicationDbContext _dbContext = dbContext;
+    public void Add(User entity)
+    {
+        _dbContext.User.Add(entity);
+    }
 }

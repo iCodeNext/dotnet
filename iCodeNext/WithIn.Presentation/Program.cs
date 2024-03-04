@@ -7,7 +7,14 @@ var builder = WebApplication.CreateBuilder(args);
     builder.Services.AddEndpointsApiExplorer();
     builder.Services.RegisterApplicationServices()
                     .RegisterPersistenceServices(builder.Configuration);
+    //builder.Services.AddDbContext<>
 }
+
+// ---------- user delete --------- notification add ---- 
+// -------  return;
+// ---------- order add -----------
+// --- Context.SaveChange(); ---------
+
 var app = builder.Build();
 {
     app.UseHttpsRedirection();
