@@ -1,0 +1,5 @@
+﻿@DependencyPrinciples_HostAddress = https://localhost:7188
+
+GET {{DependencyPrinciples_HostAddress}}/Number/index
+
+###
